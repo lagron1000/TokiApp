@@ -16,4 +16,8 @@
     <string name="submit">Submit</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
+    <string name="todo">TODO</string>
+    <string name="search_username">Search Username</string>
+    <string name="search">Search</string>
+    <string name="add_new_contact">Add New Contact</string>
 </resources>
