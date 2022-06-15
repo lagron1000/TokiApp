@@ -1,13 +1,22 @@
-package com.example.toki;
+package Models;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity
 public class Contact {
-    @PrimaryKey
+    @PrimaryKey @NonNull
     private String id;
     private String name;
+    public String Server;
+    public String last;
+//    public DateTime lastdate;
+//    public Message lastmsg;
+    public String myId;
+    public User SavedMe;
+//    public List<Message> Messages
+
 
     public String getId() {
         return id;
@@ -23,10 +32,6 @@ public class Contact {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Contact() {
-
     }
 
     public Contact(String id, String name) {

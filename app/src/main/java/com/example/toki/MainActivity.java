@@ -6,7 +6,10 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import com.example.toki.api.UsersAPI;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import Models.ContactDao;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,10 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
         contactDao = db.contactDao();
 
-        FloatingActionButton add = findViewById(R.id.btn_add);
-        add.setOnClickListener(vies -> {
-            Intent i = new Intent(this, SearchContacts.class);
-            startActivity(i);
-        });
+        UsersAPI cApi = new UsersAPI();
+        cApi.getUsers();
+
+
     }
 }

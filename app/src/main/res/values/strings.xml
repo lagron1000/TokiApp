@@ -20,4 +20,7 @@
     <string name="search_username">Search Username</string>
     <string name="search">Search</string>
     <string name="add_new_contact">Add New Contact</string>
+    <string name="baseURL_contacts">http://10.0.2.2:5143/api/contacts/</string>
+    <string name="test">test</string>
+    <string name="base_url">http://10.0.2.2:5143/api/</string>
 </resources>

@@ -7,6 +7,8 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import Models.ContactDao;
+
 public class SearchContacts extends AppCompatActivity {
 
     private AppDB db;
@@ -26,7 +28,7 @@ public class SearchContacts extends AppCompatActivity {
         Button saveBtn = findViewById(R.id.btn_search);
         saveBtn.setOnClickListener(view -> {
             EditText username = findViewById(R.id.et_contact_search);
-            Contact c = new Contact()
+
         });
     }
 }
