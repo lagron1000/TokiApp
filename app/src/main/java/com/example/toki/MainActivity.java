@@ -1,20 +1,26 @@
 package com.example.toki;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import com.example.toki.api.UsersAPI;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.List;
 
 import Models.ContactDao;
+import Models.User;
+import Models.UserDao;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppDB db;
     private ContactDao contactDao;
+    private UserDao userDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +32,23 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         contactDao = db.contactDao();
+        userDao = db.userDao();
 
-        UsersAPI cApi = new UsersAPI();
-        cApi.getUsers();
+        UsersAPI uApi = new UsersAPI();
+        Callback<List<User>> callback = new Callback<List<User>>() {
+            @Override
+            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
+                System.out.println(response);
+                userDao.insertUsers(response.body());
+                System.out.println(userDao.index());
+
+            }
+            @Override
+            public void onFailure(Call<List<User>> call, Throwable t) {
+            }
+        };
+        uApi.getUsers(callback);
+
 
 
     }

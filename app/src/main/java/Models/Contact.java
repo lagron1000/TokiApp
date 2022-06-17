@@ -8,21 +8,33 @@ import androidx.room.PrimaryKey;
 public class Contact {
     @PrimaryKey @NonNull
     private String id;
+
+    public Contact(@NonNull String id, String name, String server) {
+        this.id = id;
+        this.name = name;
+        this.server = server;
+    }
+
+//    public Contact(@NonNull String id, String name) {
+//        this.id = id;
+//        this.name = name;
+//    }
+
     private String name;
-    public String Server;
+    public String server;
     public String last;
-//    public DateTime lastdate;
+//    public Date lastdate;
 //    public Message lastmsg;
-    public String myId;
-    public User SavedMe;
-//    public List<Message> Messages
+//    public String myId;
+//    public User savedMe;
+//    public List<Message> messages;
 
 
-    public String getId() {
+    public @NonNull String getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(@NonNull String id) {
         this.id = id;
     }
 
@@ -34,8 +46,5 @@ public class Contact {
         this.name = name;
     }
 
-    public Contact(String id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+
 }

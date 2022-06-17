@@ -23,4 +23,5 @@
     <string name="baseURL_contacts">http://10.0.2.2:5143/api/contacts/</string>
     <string name="test">test</string>
     <string name="base_url">http://10.0.2.2:5143/api/</string>
+    <string name="server">server</string>
 </resources>

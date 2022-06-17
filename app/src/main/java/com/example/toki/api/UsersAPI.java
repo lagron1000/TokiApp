@@ -25,18 +25,9 @@ public class UsersAPI {
         api = retrofit.create(WebServiceAPI.class);
     }
 
-    public void getUsers(){
+    public void getUsers(Callback<List<User>> callback){
         Call<List<User>> call = api.getUsers();
-        call.enqueue(new Callback<List<User>>() {
-            @Override
-            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-                System.out.println(response);
-            }
-
-            @Override
-            public void onFailure(Call<List<User>> call, Throwable t) {
-            }
-        });
+        call.enqueue(callback);
     }
 
     public void addUser(User user) {
