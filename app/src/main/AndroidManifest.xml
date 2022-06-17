@@ -41,6 +41,9 @@
         <activity
             android:name=".SignIn"
             android:exported="false" />
+        <activity
+            android:name=".Chat"
+            android:exported="false" />
     </application>
 
 </manifest>
