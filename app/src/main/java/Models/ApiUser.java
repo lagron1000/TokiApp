@@ -1,28 +1,19 @@
 package Models;
 
-import androidx.annotation.NonNull;
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+import java.util.List;
 
-@Entity
-public class User {
-    @PrimaryKey@NonNull
+public class ApiUser {
     private String id;
     private String name;
     private String password;
     private String server;
-//    @Relation(
-//            parentColumn = "id",
-//            entityColumn = "id"
-//    )
-//    private List<Contact> contactList;
+    public List<Contact> ContactList;
 
-    @NonNull
     public String getId() {
         return id;
     }
 
-    public void setId(@NonNull String id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -50,11 +41,11 @@ public class User {
         this.server = server;
     }
 
-    public User(@NonNull String id, String name, String password, String server) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        this.server = server;
+    public List<Contact> getContactList() {
+        return ContactList;
+    }
+
+    public void setContactList(List<Contact> contactList) {
+        ContactList = contactList;
     }
 }
-
