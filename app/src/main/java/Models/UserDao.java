@@ -12,14 +12,14 @@ import java.util.List;
 public interface UserDao {
     @Transaction
     @Query("SELECT * FROM user")
-    List<UserWithContacts> index();
+    List<User> index();
 
     @Query("SELECT * FROM user WHERE id = :id")
-    UserWithContacts get(String id);
+    User get(String id);
 
     @Insert
-    void insertUser(UserWithContacts... user);
+    void insertUser(User... user);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertUsers(List<UserWithContacts> users);
+    void insertUsers(List<User> users);
 }

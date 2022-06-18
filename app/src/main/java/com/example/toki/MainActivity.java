@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<User>> call, Response<List<User>> response) {
                 System.out.println(response);
-                userDao.insertUsers(response.body());
+       //         userDao.insertUsers(response.body());
                 System.out.println(userDao.index());
 
             }
