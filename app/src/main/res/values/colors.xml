@@ -11,4 +11,6 @@
     <color name="back_continue">#4C9575</color>
     <color name="back_end">#9FC1A3</color>
     <color name="off_white">#FDFDF3</color>
+    <color name="received_m">#FBF08E</color>
+    <color name="sent_m">#A6DEE8</color>
 </resources>
