@@ -2,21 +2,21 @@ package Models;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(primaryKeys = {"id","savedMe"})
 public class Contact {
-    @PrimaryKey @NonNull
+    @NonNull
     private String id;
     private String name;
     public String server;
     public String last;
+    @NonNull
     public String savedMe;
 
 
 //    public Date lastdate;
 
-    public Contact(@NonNull String id, String name, String server, String savedMe) {
+    public Contact(@NonNull String id, String name, String server, @NonNull String savedMe) {
         this.id = id;
         this.name = name;
         this.server = server;

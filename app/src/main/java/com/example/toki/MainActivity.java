@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-            dbSingleton.refreshUsers();
+        dbSingleton.refreshUsers();
 
         Intent i = new Intent(this, SignIn.class);
         startActivity(i);

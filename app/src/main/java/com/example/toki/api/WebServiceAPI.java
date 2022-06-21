@@ -3,6 +3,7 @@ package com.example.toki.api;
 import java.util.List;
 
 import Models.Contact;
+import Models.Invitation;
 import Models.Message;
 import Models.User;
 import retrofit2.Call;
@@ -44,4 +45,6 @@ public interface WebServiceAPI {
     Call<Void> addMessage(@Path("id") String id, @Body Message msg,
                                    @Query("signedId") String signedId);
 
+    @POST("invitations")
+    Call<Void> sendInvitation(@Body Invitation inv);
 }
