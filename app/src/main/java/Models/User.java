@@ -11,11 +11,6 @@ public class User {
     private String name;
     private String password;
     private String server;
-//    @Relation(
-//            parentColumn = "id",
-//            entityColumn = "id"
-//    )
-//    private List<Contact> contactList;
 
     @NonNull
     public String getId() {
@@ -30,6 +25,14 @@ public class User {
         return name;
     }
 
+    public String getServer() {
+        return server;
+    }
+
+    public void setServer(String server) {
+        this.server = server;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -42,19 +45,26 @@ public class User {
         this.password = password;
     }
 
-    public String getServer() {
-        return server;
-    }
+//    public String getServer() {
+//        return server;
+//    }
 
-    public void setServer(String server) {
-        this.server = server;
-    }
+//    public void setServer(String server) {
+//        this.server = server;
+//    }
 
-    public User(@NonNull String id, String name, String password, String server) {
+//    @Ignore
+////    public User(@NonNull String id, String name, String password, String server) {
+//        this.id = id;
+//        this.name = name;
+//        this.password = password;
+////        this.server = server;
+//    }
+
+    public User(@NonNull String id, String name, String password) {
         this.id = id;
         this.name = name;
         this.password = password;
-        this.server = server;
     }
 }
 

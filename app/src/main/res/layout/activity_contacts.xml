@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E2E8CA"
-    tools:context=".Contacts">
+    tools:context=".components.Contacts">
 
 <!--    <LinearLayout-->
 <!--        android:id="@+id/linearLayout"-->
@@ -36,7 +36,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="ImageContrastCheck"
-        android:tint="#FFFF"/>
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

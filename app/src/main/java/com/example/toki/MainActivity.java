@@ -1,55 +1,30 @@
 package com.example.toki;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
 
-import com.example.toki.api.UsersAPI;
-
-import java.util.List;
+import com.example.toki.components.SignIn;
 
 import Models.ContactDao;
-import Models.User;
 import Models.UserDao;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
-    private AppDB db;
-    private ContactDao contactDao;
-    private UserDao userDao;
+    private AppDB db = dbSingleton.getDb();
+    private ContactDao contactDao = dbSingleton.getContactDao();
+    private UserDao userDao = dbSingleton.getUserDao();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        db = Room.databaseBuilder(getApplicationContext(), AppDB.class, "TokiDB")
-                .allowMainThreadQueries()
-                .build();
+            dbSingleton.refreshUsers();
 
-        contactDao = db.contactDao();
-        userDao = db.userDao();
-
-        UsersAPI uApi = new UsersAPI();
-        Callback<List<User>> callback = new Callback<List<User>>() {
-            @Override
-            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
-                System.out.println(response);
-       //         userDao.insertUsers(response.body());
-                System.out.println(userDao.index());
-
-            }
-            @Override
-            public void onFailure(Call<List<User>> call, Throwable t) {
-            }
-        };
-        uApi.getUsers(callback);
-
-
+        Intent i = new Intent(this, SignIn.class);
+        startActivity(i);
 
     }
 }
