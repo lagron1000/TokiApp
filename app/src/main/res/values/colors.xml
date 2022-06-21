@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="back_begin">#05756B</color>
+    <color name="back_continue">#4C9575</color>
+    <color name="back_end">#9FC1A3</color>
+    <color name="off_white">#FDFDF3</color>
+    <color name="received_m">#FBF08E</color>
+    <color name="sent_m">#A6DEE8</color>
 </resources>
