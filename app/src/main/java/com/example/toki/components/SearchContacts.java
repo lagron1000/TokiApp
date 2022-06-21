@@ -1,11 +1,14 @@
-package com.example.toki;
+package com.example.toki.components;
 
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.room.Room;
+
+import com.example.toki.AppDB;
+import com.example.toki.R;
+import com.example.toki.dbSingleton;
 
 import Models.Contact;
 import Models.ContactDao;
@@ -14,21 +17,15 @@ import Models.UserDao;
 
 public class SearchContacts extends AppCompatActivity {
 
-    private AppDB db;
-    private ContactDao contactDao;
-    private UserDao userDao;
+    private AppDB db = dbSingleton.getDb();
+    private ContactDao contactDao = dbSingleton.getContactDao();
+    private UserDao userDao = dbSingleton.getUserDao();
+    private String signId = "linor";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_contacts);
-
-        db = Room.databaseBuilder(getApplicationContext(), AppDB.class, "TokiDB")
-                .allowMainThreadQueries()
-                .build();
-
-        contactDao = db.contactDao();
-        userDao = db.userDao();
 
         Button saveBtn = findViewById(R.id.btn_search);
         saveBtn.setOnClickListener(view -> {
@@ -42,7 +39,8 @@ public class SearchContacts extends AppCompatActivity {
 
             User u = userDao.get(username);
             if (u != null) {
-                contactDao.insert(new Contact(username, server, nickname));
+                Contact c = new Contact(username, nickname, server, signId);
+                dbSingleton.addContact(c);
             }
         });
     }
