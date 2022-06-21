@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/m_tokiless"
-    tools:context=".SearchContacts">
+    tools:context=".components.SearchContacts">
 
     <LinearLayout
         android:layout_width="match_parent"
