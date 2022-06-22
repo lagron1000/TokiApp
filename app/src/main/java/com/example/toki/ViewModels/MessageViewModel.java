@@ -5,19 +5,38 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.toki.Repositories.ContactRepository;
+import com.example.toki.Repositories.MessageRepository;
 
+import java.util.List;
+
+import Models.Contact;
 import Models.Message;
 
 public class MessageViewModel extends ViewModel {
-    private ContactRepository contactRepository;
-    private MutableLiveData<Message> liveData;
+    private MessageRepository mRep = new MessageRepository();
+    private LiveData<List<Message>> liveData;
 
-//    public LiveData<Message> getLiveData() {
-//        if (liveData == null) {
-//            this.liveData = new MutableLiveData<>();
-//        }
-//        return liveData;
-//    }
-//    public MutableLiveData<>
+    public MessageViewModel() {
+        liveData = mRep.getAll();
+    }
+
+    public LiveData<List<Message>> getLiveData() {
+        if (liveData == null) {
+            this.liveData = new MutableLiveData<>();
+        }
+        return liveData;
+    }
+
+    public Message getSpecific(String id) {
+        return liveData.getValue().get(liveData.getValue().indexOf(id));
+    }
+
+    public void add(Contact contact) {
+        mRep.add(contact);
+    }
+
+    public void reload() {
+        mRep.reload();
+    }
 
 }
