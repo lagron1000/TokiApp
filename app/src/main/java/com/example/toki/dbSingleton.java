@@ -10,6 +10,8 @@ import java.util.List;
 
 import Models.Contact;
 import Models.ContactDao;
+import Models.Message;
+import Models.MessageDao;
 import Models.User;
 import Models.UserDao;
 import retrofit2.Call;
@@ -24,10 +26,25 @@ public class dbSingleton {
             .build();
     private static ContactDao contactDao = db.contactDao();
     private static UserDao userDao = db.userDao();
+    private static MessageDao msgDao = db.messageDao();
     private static UsersAPI uApi = new UsersAPI();
     private static ContactsAPI cApi = new ContactsAPI();
+
     private static User signedIn;
+    private static String chattingWithId = "linor";
     private static String server = "10.0.2.2:5143";
+
+    public static MessageDao getMsgDao() {
+        return msgDao;
+    }
+
+    public static String getChattingWithId() {
+        return chattingWithId;
+    }
+
+    public static void setChattingWithId(String chattingWith) {
+        dbSingleton.chattingWithId = chattingWith;
+    }
 
     public static String getServer() {
         return server;
@@ -97,6 +114,22 @@ public class dbSingleton {
         };
 
         cApi.getContacts(signedIn.getId(), callback);
+    }
+
+    public static void updateMessages(String cId){
+        Callback<List<Message>> callback = new Callback<List<Message>>() {
+            @Override
+            public void onResponse(Call<List<Message>> call, Response<List<Message>> response) {
+                List<Message> msgs = response.body();
+                msgDao.insertMessages(msgs);
+                List<Message> consTest = msgDao.getAllMessagesFromAllChats();
+            }
+            @Override
+            public void onFailure(Call<List<Message>> call, Throwable t) {
+            }
+        };
+
+        cApi.getMessages(cId, signedIn.getId(), callback);
     }
 
     public static void addUser(User u) {
