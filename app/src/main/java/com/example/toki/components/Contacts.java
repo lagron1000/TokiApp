@@ -25,6 +25,9 @@ public class Contacts extends AppCompatActivity {
         dbSingleton.updateContactList();
         //access contacts list using contactDao.index(dbSingleton.getSignedIn().getId());
         List<Contact> list = contactDao.index(dbSingleton.getSignedIn().getId());
+        if (!list.isEmpty()) {
+
+        }
 
         FloatingActionButton add = findViewById(R.id.btn_add);
         add.setOnClickListener(view -> {
