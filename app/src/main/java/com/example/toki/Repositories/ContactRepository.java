@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.toki.AppDB;
 import com.example.toki.api.ContactsAPI;
-import com.example.toki.components.Contacts;
 import com.example.toki.dbSingleton;
 
 import java.util.List;
@@ -18,6 +17,10 @@ public class ContactRepository {
     private ContactsAPI api = dbSingleton.getcApi();
     private AppDB db = dbSingleton.getDb();
     ContactsData data = new ContactsData();
+
+    public ContactRepository() {
+        data = new ContactsData();
+    }
 
     public LiveData<List<Contact>> getAll() {
         return data;

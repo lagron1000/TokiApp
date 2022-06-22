@@ -43,6 +43,7 @@ public class SignIn extends AppCompatActivity {
             else if (!u.getPassword().equals(password)) btn.setError("Try again");
             else {
                 dbSingleton.setSignedIn(u);
+                dbSingleton.updateContactList();
                 Intent i = new Intent(this, Contacts.class);
                 startActivity(i);
                 finish();
