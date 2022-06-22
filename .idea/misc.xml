@@ -16,32 +16,8 @@
         <entry key="..\:/Users/lagro/AndroidStudioProjects/Toki/app/src/main/res/layout/activity_signup.xml" value="0.14130434782608695" />
         <entry key="..\:/Users/lagro/AndroidStudioProjects/Toki/app/src/main/res/layout/container_received_m.xml" value="0.1" />
         <entry key="..\:/Users/lagro/AndroidStudioProjects/Toki/app/src/main/res/layout/container_sent_m.xml" value="0.1" />
+        <entry key="..\:/Users/lagro/AndroidStudioProjects/Toki/app/src/main/res/layout/item_container_contact.xml" value="0.1513467293715263" />
         <entry key="..\:/Users/lagro/AndroidStudioProjects/Toki/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
-
-<!--         <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_1.xml" value="0.242" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_2.xml" value="0.17" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_3.xml" value="0.17" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_chat.xml" value="0.242" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_chat_input.xml" value="0.1455" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_content_bottom.xml" value="0.1275" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_content_contact.xml" value="0.16" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_received_m.xml" value="0.1455" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_sent_m.xml" value="0.1455" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/bckground_content_contact.xml" value="0.1" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/gradient_list.xml" value="0.242" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/ic_send_24.xml" value="0.1" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/layout/activity.xml" value="0.1408308004052685" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/layout/activity_chat.xml" value="0.18" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/layout/activity_contacts.xml" value="0.1408308004052685" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/layout/activity_main.xml" value="0.1408308004052685" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/layout/activity_search_contacts.xml" value="0.1408308004052685" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/layout/activity_sign_in.xml" value="0.1408308004052685" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/layout/activity_sign_up.xml" value="0.1408308004052685" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/layout/background_sent_m.xml" value="0.12312954253954682" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/layout/container_received_m.xml" value="0.12227447627191107" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/layout/container_sent_m.xml" value="0.43286219081272087" />
-        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/layout/item_container_contact.xml" value="0.14666666666666667" /> -->
-
       </map>
     </option>
   </component>
