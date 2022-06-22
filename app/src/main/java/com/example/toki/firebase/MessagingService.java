@@ -43,6 +43,7 @@ public class MessagingService extends FirebaseMessagingService {
                 Intent broadcast = new Intent();
                 broadcast.setAction(Chat.NOTIFY_CHAT_ACTION);
                 broadcast.putExtra("content",remoteMessage.getNotification().getBody());
+                sendBroadcast(broadcast);
             }
         }
         super.onMessageReceived(remoteMessage);
