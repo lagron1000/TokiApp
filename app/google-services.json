@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "170638859000",
-    "project_id": "toki-faf7b",
-    "storage_bucket": "toki-faf7b.appspot.com"
+    "project_number": "209145229568",
+    "project_id": "tokiapp-32ca6",
+    "storage_bucket": "tokiapp-32ca6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:170638859000:android:2bf3392fde417d6a0eb90d",
+        "mobilesdk_app_id": "1:209145229568:android:dac54824c910f68c95c3e5",
         "android_client_info": {
           "package_name": "com.example.toki"
         }
       },
       "oauth_client": [
         {
-          "client_id": "170638859000-dt6ormuap849o6t430mejsuire25n0n1.apps.googleusercontent.com",
+          "client_id": "209145229568-ko5ns83s77m68fshe1esk9ko8p8b3c4g.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB_Nj83vDBhEvQw6hlO34_K4uZjx_ITIbs"
+          "current_key": "AIzaSyC1qwC3S3cydWTLOXhnEsNZqg7KeXKJSZw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "170638859000-dt6ormuap849o6t430mejsuire25n0n1.apps.googleusercontent.com",
+              "client_id": "209145229568-ko5ns83s77m68fshe1esk9ko8p8b3c4g.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

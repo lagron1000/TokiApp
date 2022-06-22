@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
     android:background="@drawable/m_tokiless"
-    tools:context=".Chat">
+    tools:context=".components.Chat">
 
     <View
         android:id="@+id/background"
