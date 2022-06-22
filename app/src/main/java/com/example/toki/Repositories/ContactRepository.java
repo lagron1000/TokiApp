@@ -18,7 +18,19 @@ public class ContactRepository {
     private ContactsAPI api = dbSingleton.getcApi();
     private AppDB db = dbSingleton.getDb();
     ContactsData data = new ContactsData();
-//    List<Contact> contacts;
+
+    public LiveData<List<Contact>> getAll() {
+        return data;
+    }
+
+    public void add(final Contact contact) {
+        dbSingleton.addContact(contact);
+    }
+
+    public void reload() {
+        dbSingleton.updateContactList();
+    }
+    //    List<Contact> contacts;
     class ContactsData extends MutableLiveData<List<Contact>> {
         public ContactsData() {
             super();
@@ -35,17 +47,8 @@ public class ContactRepository {
             }).start();
         }
 
-        public LiveData<List<Contact>> getAll() {
-            return data;
-        }
 
-        public void add(final Contact contact) {
-            dbSingleton.addContact(contact);
-        }
 
-        public void reload() {
-            dbSingleton.updateContactList();
-        }
 
 
     }

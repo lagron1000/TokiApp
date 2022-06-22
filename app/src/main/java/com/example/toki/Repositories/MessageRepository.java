@@ -13,43 +13,45 @@ import java.util.List;
 import Models.Contact;
 import Models.ContactDao;
 import Models.Message;
+import Models.MessageDao;
 
 public class MessageRepository {
-    private ContactDao dao = dbSingleton.getContactDao();
-    private ContactsAPI api = dbSingleton.getcApi();
+    private MessageDao dao = dbSingleton.getMsgDao();
     private AppDB db = dbSingleton.getDb();
-//    MessagesData data = new MessagesData();
-    //    List<Contact> contacts;
+    MessagesData data = new MessagesData();
+    List<Message> messages;
 
-//    class MessagesData extends MutableLiveData<List<Contact>> {
-//        public MessagesData() {
-//            super();
-//            List<Message> list = dao
-//            setValue(list);
-//        }
-//
-//        @Override
-//        protected void onActive() {
-//            super.onActive();
-//            data.postValue(dao.index(dbSingleton.getSignedIn().getId()));
-//            new Thread(()-> {
-//                dbSingleton.updateContactList();
-//            }).start();
-//        }
-//
-//        public LiveData<List<Contact>> getAll() {
-//            return data;
-//        }
-//
-//        public void add(final Contact contact) {
-//            dbSingleton.addContact(contact);
-//        }
-//
-//        public void reload() {
-//            dbSingleton.updateContactList();
-//        }
-//
-//
-//    }
+    public LiveData<List<Message>> getAll() {
+        return data;
+    }
+
+    public void add(final Contact contact) {
+        dbSingleton.addContact(contact);
+    }
+
+    public void reload() {
+        dbSingleton.updateContactList();
+    }
+
+
+    class MessagesData extends MutableLiveData<List<Message>> {
+        public MessagesData() {
+            super();
+            List<Message> list = dao.getAllMessagesFromAllChats();
+            setValue(list);
+        }
+
+        @Override
+        protected void onActive() {
+            super.onActive();
+            data.postValue(dao.getAllMessagesFromAllChats());
+            new Thread(()-> {
+                dbSingleton.updateMessages(dbSingleton.getChattingWithId());
+            }).start();
+        }
+
+
+
+    }
 }
 
