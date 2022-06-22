@@ -17,15 +17,20 @@ import com.example.toki.components.Contacts;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Objects;
 
 import Models.Contact;
+import Models.ContactDao;
 import Models.Message;
+import Models.MessageDao;
 
 public class Chat extends AppCompatActivity {
     private Contact receiverContact;
     private AppDB dataBase;
     private BroadcastReceiver broadcastReceiver;
     public static final String NOTIFY_CHAT_ACTION = "notify_chat";
+    ContactDao contactDao;
+    MessageDao messageDao;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,8 +64,10 @@ public class Chat extends AppCompatActivity {
                     String[] information = content.split(": ");
                     String sender = information[0];
                     String text = information[1];
-                    //Message message = new Message()
-                    //TOTO: create message
+                    Message message = new Message(currTime, content, false, sender);
+                    messageDao.insert(message);
+                    if (Objects.equals(sender, receiverContact.getName()));
+
                 }
             }
         };
