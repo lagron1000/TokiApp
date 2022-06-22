@@ -3,6 +3,7 @@ package com.example.toki;
 import androidx.room.Room;
 
 import com.example.toki.api.ContactsAPI;
+import com.example.toki.api.ServerComAPI;
 import com.example.toki.api.UsersAPI;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class dbSingleton {
     private static UsersAPI uApi = new UsersAPI();
     private static ContactsAPI cApi = new ContactsAPI();
     private static User signedIn;
-    private static String server = "localhost:5143";
+    private static String server = "10.0.2.2:5143";
 
     public static String getServer() {
         return server;
@@ -43,7 +44,6 @@ public class dbSingleton {
     public static ContactsAPI getcApi() {
         return cApi;
     }
-
 
     public static User getSignedIn() {
         return signedIn;
@@ -83,6 +83,22 @@ public class dbSingleton {
         uApi.getUsers(callback);
     }
 
+    public static void updateContactList(){
+        Callback<List<Contact>> callback = new Callback<List<Contact>>() {
+            @Override
+            public void onResponse(Call<List<Contact>> call, Response<List<Contact>> response) {
+                List<Contact> cons = response.body();
+                contactDao.insertContacts(cons);
+                List<Contact> consTest = contactDao.index(dbSingleton.getSignedIn().getId());
+            }
+            @Override
+            public void onFailure(Call<List<Contact>> call, Throwable t) {
+            }
+        };
+
+        cApi.getContacts(signedIn.getId(), callback);
+    }
+
     public static void addUser(User u) {
         new Thread(() -> {
             userDao.insertUser(u);
@@ -91,14 +107,23 @@ public class dbSingleton {
             uApi.addUser(u);
         }).start();
     }
+    private static void sendInvite(String fromId, String toId, String server) {
+        ServerComAPI scAPI = new ServerComAPI(server);
+        String myServer = MyApplication.context.getString(R.string.my_server);
+        scAPI.sendInvite(fromId, toId, myServer);
+    }
+
     public static void addContact(Contact c) {
         new Thread(() -> {
-            contactDao.insert(c);
-            System.out.println(contactDao.index());
+            cApi.addContact(c, signedIn.getId());
+            sendInvite(c.getContactHolderId(), c.getId(), c.getServer());
         }).start();
         new Thread(() -> {
-            cApi.addContact(c, signedIn.getId());
+            contactDao.insert(c);
+            System.out.println(contactDao.index(signedIn.getId()));
         }).start();
     }
+
+
 
 }
