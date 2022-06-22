@@ -20,7 +20,7 @@ public class SearchContacts extends AppCompatActivity {
     private AppDB db = dbSingleton.getDb();
     private ContactDao contactDao = dbSingleton.getContactDao();
     private UserDao userDao = dbSingleton.getUserDao();
-    private String signId = "linor";
+    private String signId = dbSingleton.getSignedIn().getId();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

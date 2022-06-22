@@ -2,25 +2,25 @@ package Models;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 
-@Entity
+@Entity(primaryKeys = {"id","contactHolderId"})
 public class Contact {
-    @PrimaryKey @NonNull
+    @NonNull
     private String id;
     private String name;
     public String server;
     public String last;
-    public String savedMe;
+    @NonNull
+    public String contactHolderId = "";
 
 
 //    public Date lastdate;
 
-    public Contact(@NonNull String id, String name, String server, String savedMe) {
+    public Contact(@NonNull String id, String name, String server, @NonNull String contactHolderId) {
         this.id = id;
         this.name = name;
         this.server = server;
-        this.savedMe = savedMe;
+        this.contactHolderId = contactHolderId;
     }
 
 //    public Message lastmsg;
@@ -54,12 +54,12 @@ public class Contact {
         this.name = name;
     }
 
-    public String getSavedMe() {
-        return savedMe;
+    public @NonNull String getContactHolderId() {
+        return contactHolderId;
     }
 
-    public void setSavedMe(String savedMe) {
-        this.savedMe = savedMe;
+    public void setContactHolderId(@NonNull String contactHolderId) {
+        this.contactHolderId = contactHolderId;
     }
 
     public String getServer() {

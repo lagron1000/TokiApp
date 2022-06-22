@@ -26,19 +26,9 @@ public class ContactsAPI {
         api = retrofit.create(WebServiceAPI.class);
     }
 
-    public void getContacts(String signedInId){
+    public void getContacts(String signedInId, Callback<List<Contact>> callback){
         Call<List<Contact>> call = api.getContacts(signedInId);
-        call.enqueue(new Callback<List<Contact>>() {
-            @Override
-            public void onResponse(Call<List<Contact>> call, Response<List<Contact>> response) {
-                System.out.println(response);
-            }
-
-            @Override
-            public void onFailure(Call<List<Contact>> call, Throwable t) {
-
-            }
-        });
+        call.enqueue(callback);
     }
 
     public void getContact(String id, String signedInId) {
@@ -65,7 +55,6 @@ public class ContactsAPI {
             }
             @Override
             public void onFailure(Call<Void> call, Throwable t) {
-
             }
         });
     }
