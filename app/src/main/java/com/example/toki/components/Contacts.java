@@ -14,7 +14,7 @@ import Models.ContactDao;
 
 public class Contacts extends AppCompatActivity {
     private ContactDao contactDao = dbSingleton.getContactDao();
-//     List<Contact> contacts = new ArrayList<Contact>();
+//     List<Contact> contacts = new List<Contact>();
 
 //     Contacts () {
 //         Contact Lior = new Contact("1","Lior", "1", "2");
@@ -32,7 +32,12 @@ public class Contacts extends AppCompatActivity {
 
         dbSingleton.updateContactList();
         //access contacts list using contactDao.index(dbSingleton.getSignedIn().getId());
+
         contacts = contactDao.index(dbSingleton.getSignedIn().getId());
+         if (!contacts.isEmpty()) {
+
+        }
+
 
         FloatingActionButton add = findViewById(R.id.btn_add);
         add.setOnClickListener(view -> {
