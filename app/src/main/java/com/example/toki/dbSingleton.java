@@ -27,7 +27,7 @@ public class dbSingleton {
     private static UsersAPI uApi = new UsersAPI();
     private static ContactsAPI cApi = new ContactsAPI();
     private static User signedIn;
-    private static String server = "localhost:5143";
+    private static String server = "10.0.2.2:5143";
 
     public static String getServer() {
         return server;
@@ -87,7 +87,9 @@ public class dbSingleton {
         Callback<List<Contact>> callback = new Callback<List<Contact>>() {
             @Override
             public void onResponse(Call<List<Contact>> call, Response<List<Contact>> response) {
-                contactDao.insertContacts(response.body());
+                List<Contact> cons = response.body();
+                contactDao.insertContacts(cons);
+                List<Contact> consTest = contactDao.index(dbSingleton.getSignedIn().getId());
             }
             @Override
             public void onFailure(Call<List<Contact>> call, Throwable t) {
@@ -114,7 +116,7 @@ public class dbSingleton {
     public static void addContact(Contact c) {
         new Thread(() -> {
             cApi.addContact(c, signedIn.getId());
-            sendInvite(c.getSavedMe(), c.getId(), c.getServer());
+            sendInvite(c.getContactHolderId(), c.getId(), c.getServer());
         }).start();
         new Thread(() -> {
             contactDao.insert(c);

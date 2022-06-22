@@ -12,10 +12,10 @@ import java.util.List;
 @Dao
 public interface ContactDao {
 
-    @Query("SELECT * FROM contact WHERE savedMe = :savedMe")
+    @Query("SELECT * FROM contact WHERE contactHolderId = :savedMe")
     List<Contact> index(String savedMe);
 
-    @Query("SELECT * FROM contact WHERE id = :id AND savedMe = :savedMe")
+    @Query("SELECT * FROM contact WHERE id = :id AND contactHolderId = :savedMe")
     Contact get(String id, String savedMe);
 
     @Insert
