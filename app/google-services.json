@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "170638859000",
+    "project_id": "toki-faf7b",
+    "storage_bucket": "toki-faf7b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:170638859000:android:2bf3392fde417d6a0eb90d",
+        "android_client_info": {
+          "package_name": "com.example.toki"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "170638859000-dt6ormuap849o6t430mejsuire25n0n1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_Nj83vDBhEvQw6hlO34_K4uZjx_ITIbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "170638859000-dt6ormuap849o6t430mejsuire25n0n1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
