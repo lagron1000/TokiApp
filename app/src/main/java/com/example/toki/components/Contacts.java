@@ -31,6 +31,7 @@ public class Contacts extends AppCompatActivity {
      List<Contact> contacts;
     //private PreferenceManager preferenceManager;
 
+
 //     Contacts () {
 //         Contact Lior = new Contact("1","Lior", "1", "2");
 //         Contact Nofar = new Contact("2","Nofar", "1", "3");
@@ -55,7 +56,12 @@ public class Contacts extends AppCompatActivity {
 
         dbSingleton.updateContactList();
         //access contacts list using contactDao.index(dbSingleton.getSignedIn().getId());
+
         contacts = contactDao.index(dbSingleton.getSignedIn().getId());
+         if (!contacts.isEmpty()) {
+
+        }
+
 
         FloatingActionButton add = findViewById(R.id.btn_add);
         add.setOnClickListener(view -> {
