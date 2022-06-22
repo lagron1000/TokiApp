@@ -25,4 +25,9 @@
     <string name="base_url">http://10.0.2.2:5143/api/</string>
     <string name="server">server</string>
     <string name="my_server">10.0.2.2:5143</string>
+    <string name="type_a_message">Type a message</string>
+    <string name="channel_name1">First</string>
+    <string name="channel_description1">First channel</string>
+    <string name="channel_name2">Second</string>
+    <string name="channel_description2">Second channel</string>
 </resources>
