@@ -59,19 +59,9 @@ public class ContactsAPI {
         });
     }
 
-    public void getMessages(String conId, String SignedId) {
+    public void getMessages(String conId, String SignedId, Callback<List<Message>> callback) {
         Call<List<Message>> call = api.getMessages(conId, SignedId);
-        call.enqueue(new Callback<List<Message>>() {
-            @Override
-            public void onResponse(Call<List<Message>> call, Response<List<Message>> response) {
-                System.out.println(response);
-            }
-
-            @Override
-            public void onFailure(Call<List<Message>> call, Throwable t) {
-
-            }
-        });
+        call.enqueue(callback);
     }
 
     public void addMessage(String conId, Message msg, String signedId) {

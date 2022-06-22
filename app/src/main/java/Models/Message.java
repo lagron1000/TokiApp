@@ -2,58 +2,85 @@ package Models;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 
-@Entity
+import java.util.Date;
+
+@Entity(primaryKeys = {"id","chatId", "created"})
 public class Message {
-    @PrimaryKey
-    private int Id;
-    private String Content;
-//    public DateTime Created;
-    private Boolean Sent;
-    private String SentBy;
-    private String CurrentTime;
+    @NonNull
+    private int id;
+    @NonNull
+    private String chatId;
+    private String content;
+    @NonNull
+    public Date created;
+    private Boolean sent;
+    private String sentBy;
+//    private String CurrentTime;
 
-    public Message(@NonNull String currentTime, String content, Boolean sent, String sentBy) {
-        this.CurrentTime = currentTime;
-        this.Content = content;
-        this.Sent = sent;
-        this.SentBy = sentBy;
+
+    public Message(@NonNull String chatId, String content, @NonNull Date created, Boolean sent, String sentBy) {
+        this.id = 0;
+        this.chatId = chatId;
+        this.content = content;
+        this.created = created;
+        this.sent = sent;
+        this.sentBy = sentBy;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getChatId() {
+        return chatId;
+    }
+
+    public void setChatId(String chatId) {
+        this.chatId = chatId;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
     }
 
     public Boolean getSent() {
-        return Sent;
+        return sent;
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public String getContent() {
-        return Content;
+        return content;
     }
 
-    public String getCurrentTime() {
-        return CurrentTime;
+    public Date getCurrentTime() {
+        return created;
     }
 
     public String getSentBy() {
-        return SentBy;
+        return sentBy;
     }
 
     public void setContent(String content) {
-        Content = content;
+        this.content = content;
     }
 
-    public void setCurrentTime(String currentTime) {
-        CurrentTime = currentTime;
+    public void setCurrentTime(Date currentTime) {
+        created = currentTime;
     }
 
     public void setSent(Boolean sent) {
-        Sent = sent;
+        this.sent = sent;
     }
 
     public void setSentBy(String sentBy) {
-        SentBy = sentBy;
+        sentBy = sentBy;
     }
 }

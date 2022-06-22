@@ -14,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/gradient_list"
         app:layout_constraintBottom_toTopOf="@+id/input"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,11 +77,18 @@
         android:id="@+id/progress_bar_chat"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:backgroundTint="@color/white"
+        android:backgroundTintMode="src_over"
+        android:foregroundTint="@color/white"
+        android:progressTint="@color/white"
+        android:secondaryProgressTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@id/background"
-        app:layout_constraintTop_toBottomOf="@id/contact"
         app:layout_constraintEnd_toEndOf="@id/background"
         app:layout_constraintStart_toStartOf="@id/background"
-        app:layout_constraintTop_toTopOf="@id/background"/>
+        app:layout_constraintTop_toBottomOf="@id/contact"
+        app:layout_constraintTop_toTopOf="@id/background"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/white"/>
     <FrameLayout
         android:id="@+id/layoutSend"
         android:layout_width="60dp"

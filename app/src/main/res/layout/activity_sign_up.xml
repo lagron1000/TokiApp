@@ -6,7 +6,25 @@
     android:layout_height="match_parent"
     android:background="@drawable/m_toki"
     tools:context=".components.SignUp">
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
+        android:clipToOutline="false"
+        android:contentDescription="@string/todo"
+        android:foregroundTint="@android:color/transparent"
+        android:outlineAmbientShadowColor="@android:color/transparent"
+        android:outlineProvider="none"
+        android:outlineSpotShadowColor="@android:color/transparent"
+        android:src="@drawable/ic_settings"
+        app:backgroundTint="#00FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:maxImageSize="60dp"
+        tools:ignore="ImageContrastCheck" />
     <LinearLayout
         android:id="@+id/LinearLayout"
         android:layout_width="match_parent"
@@ -89,6 +107,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:backgroundTint="#9EA8E8"
+            android:textColor="@color/white"
             android:text="@string/submit"
             tools:ignore="TextContrastCheck" />
 
