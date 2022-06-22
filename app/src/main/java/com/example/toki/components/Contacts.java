@@ -2,10 +2,17 @@ package com.example.toki.components;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.PreferenceGroup;
+import android.preference.PreferenceManager;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.toki.R;
+import com.example.toki.ViewModels.ContactViewModel;
+import com.example.toki.databinding.ActivityContactsBinding;
 import com.example.toki.dbSingleton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -17,11 +24,19 @@ import Models.Message;
 import Models.MessageDao;
 
 public class Contacts extends AppCompatActivity {
+    private ActivityContactsBinding binding;
+    private ContactViewModel viewModel;
+    //POST ACTIVITY
+    //ONCLICK MEATHOD
+    //ADD CONTACTS
+    //SETTINGS
+    //protected PreferenceManager preferenceManager;
     private ContactDao contactDao = dbSingleton.getContactDao();
     private MessageDao msgDao = dbSingleton.getMsgDao();
 
     List<Contact> contacts;
     List<Message> msgs;
+    //private PreferenceManager preferenceManager;
 
 //     Contacts () {
 //         Contact Lior = new Contact("1","Lior", "1", "2");
@@ -32,10 +47,18 @@ public class Contacts extends AppCompatActivity {
 //         contacts.add(Maya);
 //     }
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        binding = ActivityContactsBinding.inflate(getLayoutInflater());
+//        setContentView(binding.getRoot());
         setContentView(R.layout.activity_contacts);
+        viewModel = new ViewModelProvider(this).get(viewModel.getClass());
+//        RecyclerView
+        //preferenceManager = new PreferenceManager(getApplicationContext());
+        //pm = new PreferenceManager(getApplicationContext());
+
 
         dbSingleton.updateContactList();
 
@@ -59,6 +82,15 @@ public class Contacts extends AppCompatActivity {
             Intent i = new Intent(this, Chat.class);
             startActivity(i);
         }
+
+    private void Load(Boolean isLoading) {
+        if (isLoading) {
+            binding.progressBarContacts.setVisibility(View.VISIBLE);
+        }
+        else {
+            binding.progressBarContacts.setVisibility(View.INVISIBLE);
+        }
+    }
 
     }
 }

@@ -13,4 +13,5 @@
     <color name="off_white">#FDFDF3</color>
     <color name="received_m">#FBF08E</color>
     <color name="sent_m">#A6DEE8</color>
+    <color name="red_error">#D57E7E</color>
 </resources>

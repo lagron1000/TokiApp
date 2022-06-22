@@ -10,6 +10,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.toki.R;
 import com.example.toki.dbSingleton;
+import com.example.toki.components.Contacts;
+import com.example.toki.databinding.ActivityChatBinding;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -26,7 +28,7 @@ public class Chat extends AppCompatActivity {
     private Contact receiverContact;
     private BroadcastReceiver broadcastReceiver;
     public static final String NOTIFY_CHAT_ACTION = "notify_chat";
-
+  
     private List<Message> msgs;
 
     @Override
@@ -34,7 +36,9 @@ public class Chat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
         ConstraintLayout constraintLayout = findViewById(R.id.chat_layout);
+
         msgs = msgDao.getMessageFromChat(dbSingleton.getChattingWithId());
+
 //        AnimationDrawable animationDrawable = (AnimationDrawable) constraintLayout.getBackground();
 //        animationDrawable.setEnterFadeDuration(2500);
 //        animationDrawable.setExitFadeDuration(5000);
