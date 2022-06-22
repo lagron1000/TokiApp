@@ -18,6 +18,7 @@
         <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_3.xml" value="0.17" />
         <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_chat.xml" value="0.242" />
         <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_chat_input.xml" value="0.1455" />
+        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_content_bottom.xml" value="0.1275" />
         <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_content_contact.xml" value="0.16" />
         <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_received_m.xml" value="0.1455" />
         <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/drawable/background_sent_m.xml" value="0.1455" />
@@ -34,6 +35,7 @@
         <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/layout/background_sent_m.xml" value="0.12312954253954682" />
         <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/layout/container_received_m.xml" value="0.12227447627191107" />
         <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/layout/container_sent_m.xml" value="0.43286219081272087" />
+        <entry key="..\:/Users/nofar/OneDrive - Bar-Ilan University/Documents/GitHub/TokiApp/app/src/main/res/layout/item_container_contact.xml" value="0.14666666666666667" />
       </map>
     </option>
   </component>
