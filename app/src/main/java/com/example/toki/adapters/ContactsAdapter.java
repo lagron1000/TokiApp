@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.toki.R;
-import com.example.toki.databinding.ItemContainerContactBinding;
 
 import java.util.List;
 
@@ -83,11 +82,11 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
             itemView.setOnClickListener(this);
         }
 
-        ItemContainerContactBinding binding;
-        public ContactViewHolder(ItemContainerContactBinding itemContainerContactBinding) {
-            super(itemContainerContactBinding.getRoot());
-            binding = itemContainerContactBinding;
-        }
+//        ItemContainerContactBinding binding;
+//        public ContactViewHolder(ItemContainerContactBinding itemContainerContactBinding) {
+//            super(itemContainerContactBinding.getRoot());
+//            binding = itemContainerContactBinding;
+//        }
 
 //        void setContactData(List<Contact> cons) {
 //            binding.textName.setText(cont.getName());

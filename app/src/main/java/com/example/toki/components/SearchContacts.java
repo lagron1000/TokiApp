@@ -41,6 +41,10 @@ public class SearchContacts extends AppCompatActivity {
             if (u != null) {
                 Contact c = new Contact(username, nickname, server, signId);
                 dbSingleton.addContact(c);
+                finish();
+            }
+            else {
+                saveBtn.setError("Try again");
             }
         });
     }

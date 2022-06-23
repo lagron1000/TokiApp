@@ -73,22 +73,22 @@
         app:layout_constraintBottom_toBottomOf="@id/background"
         app:layout_constraintTop_toBottomOf="@id/contact"/>
 
-    <ProgressBar
-        android:id="@+id/progress_bar_chat"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:backgroundTint="@color/white"
-        android:backgroundTintMode="src_over"
-        android:foregroundTint="@color/white"
-        android:progressTint="@color/white"
-        android:secondaryProgressTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="@id/background"
-        app:layout_constraintEnd_toEndOf="@id/background"
-        app:layout_constraintStart_toStartOf="@id/background"
-        app:layout_constraintTop_toBottomOf="@id/contact"
-        app:layout_constraintTop_toTopOf="@id/background"
-        android:indeterminateTintMode="src_atop"
-        android:indeterminateTint="@color/white"/>
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progress_bar_chat"-->
+<!--        android:layout_width="40dp"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:backgroundTint="@color/white"-->
+<!--        android:backgroundTintMode="src_over"-->
+<!--        android:foregroundTint="@color/white"-->
+<!--        android:progressTint="@color/white"-->
+<!--        android:secondaryProgressTint="#FFFFFF"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/background"-->
+<!--        app:layout_constraintEnd_toEndOf="@id/background"-->
+<!--        app:layout_constraintStart_toStartOf="@id/background"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/contact"-->
+<!--        app:layout_constraintTop_toTopOf="@id/background"-->
+<!--        android:indeterminateTintMode="src_atop"-->
+<!--        android:indeterminateTint="@color/white"/>-->
     <FrameLayout
         android:id="@+id/layoutSend"
         android:layout_width="60dp"
