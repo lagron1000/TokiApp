@@ -79,6 +79,11 @@ public class Contacts extends AppCompatActivity implements ContactsAdapter.onCon
             Intent i = new Intent(this, SearchContacts.class);
             startActivity(i);
         });
+        FloatingActionButton settings = findViewById(R.id.btn_settings);
+        settings.setOnClickListener(view -> {
+            Intent i = new Intent(this, Settings.class);
+            startActivity(i);
+        });
 
 //        binding.progressBarContacts.setVisibility(View.VISIBLE);
     }

@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.toki.AppDB;
 import com.example.toki.R;
 import com.example.toki.dbSingleton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -48,6 +49,11 @@ public class SignIn extends AppCompatActivity {
                 startActivity(i);
                 finish();
             }
+        });
+        FloatingActionButton settings = findViewById(R.id.btn_settings);
+        settings.setOnClickListener(view -> {
+            Intent i = new Intent(this, Settings.class);
+            startActivity(i);
         });
     }
 

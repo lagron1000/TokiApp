@@ -1,11 +1,13 @@
-package com.example.toki;
+package com.example.toki.components;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.toki.components.SignIn;
+import com.example.toki.AppDB;
+import com.example.toki.R;
+import com.example.toki.dbSingleton;
 
 import Models.ContactDao;
 import Models.UserDao;
