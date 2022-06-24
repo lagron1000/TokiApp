@@ -8,7 +8,7 @@
 ניתן להתחבר אל המשתמש lior עם הסיסמא 123
 
 ניתן להוסיף אנשי קשר ומשתמשים חדשים. שימו לב כי כפתור ההוספה עלול להיות מוסתר בטעות באימולטור:
-![alt text](https://i.imgur.com/3haJPcn.png|width=1px)
+![alt text](https://i.imgur.com/3haJPcn.png)
 
 Server-Side in "db" branch https://github.com/lagron1000/Toki-API 
 
